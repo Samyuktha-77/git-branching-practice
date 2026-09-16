@@ -1,0 +1,11 @@
+Day 1 - Git Branching
+
+Skills Practiced:
+- git init
+- git status
+- git add
+- git commit
+- git branch
+- git switch
+- git merge
+- git push
