@@ -9,3 +9,6 @@ Skills Practiced:
 - git switch
 - git merge
 - git push
+
+Status:
+Successfully practiced creating and switching to a Git branch.
