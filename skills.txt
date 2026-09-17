@@ -12,3 +12,4 @@ Skills Practiced:
 
 Status:
 Successfully practiced creating and switching to a Git branch.
+
