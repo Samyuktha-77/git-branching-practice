@@ -16,3 +16,6 @@ Git Branching
 - git switch
 - git merge
 - git push
+
+## Day 2
+Today I learned how Pull Requests work in GitHub.
