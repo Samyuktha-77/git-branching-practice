@@ -21,6 +21,23 @@ Git Branching
 Today I learned how Pull Requests work in GitHub.
 
 
+## Day 3: Using .gitignore
+
+### What I Learned
+- How to prevent unnecessary files from being tracked by Git.
+- How to ignore files using patterns in `.gitignore`.
+- How to verify ignored files using `git status --ignored`.
+
+### Practical Task
+Created a `.gitignore` file with these rules:
+- `.env` — ignore environment configuration files.
+- `__pycache__/` — ignore Python cache folders.
+- `*.log` — ignore files ending in `.log`.
+
+### Result
+Created a test file named `test.log` and verified that Git ignored it successfully.
+
+
 ## Day 4: Learning Git and GitHub
 
 ### About This Repository
