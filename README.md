@@ -56,3 +56,20 @@ This repository documents my daily Git and GitHub practice.
 
 ### Goal
 To improve my software development workflow through daily hands-on practice.
+
+
+## Day 5: Resolving Git Merge Conflicts
+
+### What I Learned
+- Why merge conflicts happen when branches modify the same part of a file.
+- How to identify conflict markers in a file.
+- How to resolve conflicts and complete a merge commit.
+
+### Practical Task
+- Created two branches with different changes to the same line.
+- Triggered a merge conflict in `conflict.txt`.
+- Resolved the conflict by combining both versions.
+- Staged the resolved file and committed the merge.
+
+### Result
+Successfully resolved a Git merge conflict and verified that the working tree was clean.
