@@ -73,3 +73,20 @@ To improve my software development workflow through daily hands-on practice.
 
 ### Result
 Successfully resolved a Git merge conflict and verified that the working tree was clean.
+
+## Day 6: Learning Git Stash
+
+### What I Learned
+- How to temporarily save unfinished changes using `git stash`.
+- How to include untracked files using `git stash push -u`.
+- How to restore saved changes using `git stash pop`.
+- How to check saved stashes using `git stash list`.
+
+### Practical Task
+- Created an untracked practice file named `stash-practice.txt`.
+- Stashed my README changes and the untracked file.
+- Verified that the working tree became clean.
+- Restored the changes using `git stash pop`.
+
+### Result
+Successfully practised saving and restoring unfinished changes without creating a commit.
