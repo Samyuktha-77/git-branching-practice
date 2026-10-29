@@ -1,1 +1,2 @@
 Day 6: Practising Git Stash
+Day 7: Learning Git Log and Git Diff.
