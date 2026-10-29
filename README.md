@@ -90,3 +90,17 @@ Successfully resolved a Git merge conflict and verified that the working tree wa
 
 ### Result
 Successfully practised saving and restoring unfinished changes without creating a commit.
+
+### Day 7: Git Log and Git Diff
+
+**What I learned**
+- `git log --oneline` — displays a short history of commits.
+- `git log --oneline --graph --all` — shows commit history and branch relationships.
+- `git diff` — displays changes made to files before committing.
+
+**Practice**
+- Created a Day 7 practice branch.
+- Modified `stash-practice.txt`.
+- Used `git diff` to inspect the changes.
+
+**Key takeaway:** Git Log helps me understand the project's history, while Git Diff helps me review changes before committing them.
