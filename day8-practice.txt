@@ -1,0 +1,2 @@
+Day 8: Practising Git Reset.
+This is my second temporary commit.

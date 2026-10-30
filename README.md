@@ -93,14 +93,18 @@ Successfully practised saving and restoring unfinished changes without creating 
 
 ### Day 7: Git Log and Git Diff
 
-**What I learned**
-- `git log --oneline` — displays a short history of commits.
-- `git log --oneline --graph --all` — shows commit history and branch relationships.
-- `git diff` — displays changes made to files before committing.
-
-**Practice**
-- Created a Day 7 practice branch.
-- Modified `stash-practice.txt`.
-- Used `git diff` to inspect the changes.
+**What I learned:**
+- Used `git log` to view commit history.
+- Used `git diff` to inspect file changes.
+- Compared previous and current versions of files.
 
 **Key takeaway:** Git Log helps me understand the project's history, while Git Diff helps me review changes before committing them.
+
+### Day 8: Git Reset and Git Revert
+
+**What I learned:**
+- Used `git revert` to reverse a previous commit while preserving history.
+- Used `git reset --soft HEAD~1` to move HEAD back one commit while keeping changes staged.
+- Recommitted the staged changes with a new commit message.
+
+**Key takeaway:** Git Revert creates a new commit to reverse changes, while Git Reset moves the branch pointer.
