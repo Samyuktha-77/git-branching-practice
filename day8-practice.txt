@@ -1,0 +1,2 @@
+Day 8: Learning Git Reset and Git Revert.
+This is my temporary practice file.
