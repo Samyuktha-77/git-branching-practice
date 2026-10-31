@@ -108,3 +108,13 @@ Successfully practised saving and restoring unfinished changes without creating 
 - Recommitted the staged changes with a new commit message.
 
 **Key takeaway:** Git Revert creates a new commit to reverse changes, while Git Reset moves the branch pointer.
+
+### Day 9: Git Cherry-pick
+
+**What I learned:**
+- Used `git cherry-pick` to apply a specific commit from another branch.
+- Created a source branch and made a commit.
+- Switched to another branch and applied the selected commit.
+- Verified the new commit using `git log --oneline`.
+
+**Key takeaway:** Git Cherry-pick allows me to copy the changes from a specific commit onto my current branch without merging the entire source branch.
