@@ -118,3 +118,14 @@ Successfully practised saving and restoring unfinished changes without creating 
 - Verified the new commit using `git log --oneline`.
 
 **Key takeaway:** Git Cherry-pick allows me to copy the changes from a specific commit onto my current branch without merging the entire source branch.
+
+### Day 10: Git Rebase
+
+**What I learned:**
+- Created a feature branch and committed a change.
+- Added a separate commit to the main branch.
+- Used `git rebase main` to replay my feature commit on top of main.
+- Checked the commit history using `git log --oneline --graph --all`.
+
+**Key takeaway:**
+Git Rebase replays commits onto a new base, creating a linear project history. It changes the commit IDs of the replayed commits.
