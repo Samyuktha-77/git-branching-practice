@@ -129,3 +129,17 @@ Successfully practised saving and restoring unfinished changes without creating 
 
 **Key takeaway:**
 Git Rebase replays commits onto a new base, creating a linear project history. It changes the commit IDs of the replayed commits.
+
+### Day 11: Git Tags
+
+**What I learned:**
+- Learned what Git tags are and why they are used.
+- Created a lightweight tag using `git tag v1.0`.
+- Inspected a tag using `git show v1.0`.
+- Pushed a tag to GitHub using `git push origin v1.0`.
+- Created an annotated tag using `git tag -a v1.1 -m "Day 11 annotated tag practice"`.
+- Pushed the annotated tag to GitHub.
+
+**Key takeaway:**
+
+Git tags mark important commits in a repository, such as project releases. Lightweight tags are simple labels, while annotated tags store additional information like a message, tagger and date.
