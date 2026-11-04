@@ -143,3 +143,16 @@ Git Rebase replays commits onto a new base, creating a linear project history. I
 **Key takeaway:**
 
 Git tags mark important commits in a repository, such as project releases. Lightweight tags are simple labels, while annotated tags store additional information like a message, tagger and date.
+
+## Day 13 – GitHub Issues Practice
+
+### What I learned
+- Creating GitHub Issues
+- Adding labels to issues
+- Tracking tasks using Issues
+- Closing completed issues
+- Understanding basic project management
+
+### Key takeaway
+GitHub Issues help developers track bugs,
+features, tasks, and improvements.
