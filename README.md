@@ -156,3 +156,23 @@ Git tags mark important commits in a repository, such as project releases. Light
 ### Key takeaway
 GitHub Issues help developers track bugs,
 features, tasks, and improvements.
+
+## Day 14 – GitHub Projects
+
+### What I Learned
+- What GitHub Projects are and why they are useful.
+- How to create a project board.
+- How to organize tasks using a Kanban board.
+- How to track tasks using Todo, In Progress, and Done.
+- How GitHub Issues can be connected to project tasks.
+
+### Practical Work
+- Created a GitHub Project named **Git & GitHub – 30 Days Learning Journey**.
+- Added daily learning tasks to the board.
+- Moved the Day 14 task into In Progress.
+- Practised organizing work using a Kanban workflow.
+
+### Key Takeaway
+GitHub Projects helps developers organize tasks, track progress, and manage projects efficiently.
+
+**Status:** Day 14 completed.
