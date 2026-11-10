@@ -176,3 +176,21 @@ features, tasks, and improvements.
 GitHub Projects helps developers organize tasks, track progress, and manage projects efficiently.
 
 **Status:** Day 14 completed.
+
+
+
+## Day 16 - React Components & Props
+
+### What I Learned
+- Understanding React components.
+- Creating reusable components.
+- Passing data using props.
+- Displaying dynamic student information.
+
+### Practical Work
+Created a Student component and displayed different student details using props.
+
+### Technologies
+- React
+- JavaScript
+- JSX
