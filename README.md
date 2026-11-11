@@ -194,3 +194,25 @@ Created a Student component and displayed different student details using props.
 - React
 - JavaScript
 - JSX
+
+## Day 17 – React Forms & Controlled Components
+
+**What I learned:**
+- Creating forms in React.
+- Managing form data using `useState()`.
+- Understanding controlled components.
+- Handling input changes using `onChange`.
+- Handling form submissions using `onSubmit`.
+- Preventing page reload using `e.preventDefault()`.
+- Performing basic form validation.
+- Adding new student data using the spread operator.
+- Displaying students dynamically using `map()`.
+
+**Practical project:** Student Registration Form
+
+**Outcome:** Built an interactive React form that accepts student name, course and year, validates inputs, and dynamically displays newly registered students.
+- Displaying students dynamically using `map()`.
+
+**Practical project:** Student Registration Form
+
+**Outcome:** Built an interactive React form that accepts student name, course and year, validates inputs, and dynamically displays newly registered students.
