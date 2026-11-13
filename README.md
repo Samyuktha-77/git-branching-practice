@@ -216,3 +216,48 @@ Created a Student component and displayed different student details using props.
 **Practical project:** Student Registration Form
 
 **Outcome:** Built an interactive React form that accepts student name, course and year, validates inputs, and dynamically displays newly registered students.
+
+## Day 18 – React Conditional Rendering
+
+**Skill:** Conditional Rendering in React
+
+### What I learned
+- Conditional rendering using `if-else`.
+- Using the ternary operator (`? :`).
+- Using logical AND (`&&`) to display elements.
+- Managing UI visibility using React `useState`.
+- Showing and hiding student details.
+- Implementing Login and Logout functionality.
+
+### Practical Project: Student Dashboard
+
+Created a Student Dashboard with:
+- Welcome message.
+- Login and Logout functionality.
+- Logged In and Logged Out status.
+- Show and Hide Student Details.
+- Conditional display of student information.
+
+**Key Learning:** React can display different UI elements based on application state.
+
+
+## Day 19 - React Lists and Keys
+
+### What I learned
+- Rendering lists using the JavaScript map() method.
+- Displaying dynamic data in React.
+- Understanding the key prop.
+- Using filter() to delete a student.
+- Updating the UI using useState.
+
+### Practical Task
+Created a Student Dashboard that displays student details and allows users to delete students.
+
+### Concepts Practiced
+- useState()
+- map()
+- filter()
+- Unique keys
+- Event handling
+
+**Result:** Successfully created a dynamic Student Dashboard using React.
