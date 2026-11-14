@@ -261,3 +261,31 @@ Created a Student Dashboard that displays student details and allows users to de
 - Event handling
 
 **Result:** Successfully created a dynamic Student Dashboard using React.
+
+## Day 20 - React Conditional Rendering
+
+### What I learned
+- Understanding conditional rendering in React.
+- Using the ternary operator (`? :`) to display different UI.
+- Managing login status using `useState()`.
+- Showing different components based on application state.
+- Implementing Login and Logout functionality.
+- Combining conditional rendering with dynamic student lists.
+
+### Practical Task
+Created a Student Dashboard with:
+- Login and Logout buttons.
+- Welcome message after login.
+- Login message when logged out.
+- Student list visible only after login.
+- Delete functionality for students.
+
+### Concepts Practiced
+- useState()
+- Conditional rendering
+- Ternary operator
+- Event handling
+- map()
+- filter()
+
+**Result:** Successfully created an interactive Student Dashboard with Login and Logout functionality using React conditional rendering.
