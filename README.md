@@ -289,3 +289,34 @@ Created a Student Dashboard with:
 - filter()
 
 **Result:** Successfully created an interactive Student Dashboard with Login and Logout functionality using React conditional rendering.
+
+## Day 21 – React useEffect Hook
+
+### What I learned
+- Understanding the useEffect() Hook in React.
+- Running side effects after component rendering.
+- Using an empty dependency array (`[]`).
+- Understanding dependency arrays.
+- Updating the browser document title dynamically.
+- Combining useState() and useEffect().
+
+### Practical Project: Student Dashboard
+
+Enhanced my existing Student Dashboard with:
+- Welcome message displayed in the browser console.
+- Dynamic total student count.
+- Automatic browser tab title updates.
+- Student count updates whenever a student is deleted.
+- Existing Login, Logout, and Delete functionality.
+
+### Concepts Practiced
+- useState()
+- useEffect()
+- Dependency arrays
+- document.title
+- Array length
+- Event handling
+
+**Key Learning:** The useEffect() Hook allows React components to perform side effects and respond to changes in state or dependencies.
+
+**Status:** Day 21 completed.
