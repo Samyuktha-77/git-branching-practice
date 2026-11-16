@@ -320,3 +320,21 @@ Enhanced my existing Student Dashboard with:
 **Key Learning:** The useEffect() Hook allows React components to perform side effects and respond to changes in state or dependencies.
 
 **Status:** Day 21 completed.
+
+## Day 22 – React Local Storage
+
+**Skill Learned:** Local Storage in React
+
+### What I Learned
+- Understanding browser Local Storage.
+- Saving data using `localStorage.setItem()`.
+- Retrieving data using `localStorage.getItem()`.
+- Converting objects and arrays using `JSON.stringify()` and `JSON.parse()`.
+- Using `useEffect()` to save updated data.
+- Maintaining student data after refreshing the browser.
+
+### Practical Implementation
+Updated my React Student Dashboard to save student information in Local Storage. Deleted students remain deleted even after refreshing the page.
+
+### Key Takeaway
+Local Storage helps maintain data in the browser even after a page refresh.
