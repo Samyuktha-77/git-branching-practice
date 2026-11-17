@@ -1,0 +1,22 @@
+
+name: My First GitHub Action
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Welcome Message
+        run: echo "Hello! My first GitHub Actions workflow is running!"
+
+      - name: Check Repository
+        run: echo "GitHub Actions is working successfully!"
