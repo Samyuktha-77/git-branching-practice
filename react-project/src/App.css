@@ -1,0 +1,180 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  background: #172554;
+  color: white;
+  text-align: center;
+  padding: 45px 20px;
+}
+
+.header h1 {
+  margin-bottom: 12px;
+}
+
+/* Main Container */
+.container {
+  max-width: 1100px;
+  margin: 35px auto;
+  padding: 20px;
+}
+
+/* Sections */
+.intro,
+.skills,
+.counter,
+.add-student {
+  background: white;
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px #00000010;
+}
+
+.intro h2,
+.skills h2,
+.counter h2,
+.add-student h2 {
+  margin-bottom: 15px;
+  color: #1d4ed8;
+}
+
+/* Student Cards */
+.skill-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.skill-card {
+  background: #eff6ff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.skill-card h3 {
+  margin-bottom: 10px;
+  color: #1e40af;
+}
+
+.skill-card p {
+  line-height: 1.7;
+}
+
+/* Add Student Form */
+.add-student form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+}
+
+.add-student input {
+  padding: 13px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+}
+
+.add-student input:focus {
+  border-color: #2563eb;
+}
+
+/* Buttons */
+button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 5px;
+  font-size: 15px;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+/* Delete Button */
+.delete-button {
+  background: #dc2626;
+  margin-top: 12px;
+}
+
+.delete-button:hover {
+  background: #991b1b;
+}
+
+.add-student button {
+  align-self: flex-start;
+}
+
+.reset-button {
+  background: #64748b;
+}
+
+/* Counter */
+.counter {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.counter p {
+  color: #1e293b;
+  font-size: 18px;
+  margin: 5px;
+}
+
+.success-message {
+  color: #15803d !important;
+  font-weight: bold;
+}
+
+.normal-message {
+  color: #64748b !important;
+}
+
+/* Footer */
+.footer {
+  background: #172554;
+  color: white;
+  text-align: center;
+  padding: 22px;
+  line-height: 1.8;
+}
+
+/* Mobile Responsive */
+@media (max-width: 650px) {
+  .skill-list {
+    grid-template-columns: 1fr;
+  }
+
+  .header h1 {
+    font-size: 24px;
+  }
+
+  .container {
+    padding: 15px;
+  }
+}

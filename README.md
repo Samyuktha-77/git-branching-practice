@@ -338,3 +338,25 @@ Updated my React Student Dashboard to save student information in Local Storage.
 
 ### Key Takeaway
 Local Storage helps maintain data in the browser even after a page refresh.
+
+
+## Day 23 – React Custom Hooks
+
+### What I learned
+- Understood what Custom Hooks are in React.
+- Learned how to create reusable logic using Custom Hooks.
+- Learned how to use useState inside a Custom Hook.
+- Understood how Custom Hooks reduce repeated code.
+
+### Practical implementation
+- Created a custom Hook called useCounter().
+- Implemented increment and decrement functionality.
+- Integrated the Custom Hook into my Student Dashboard.
+- Practiced reusable logic in React.
+
+### Files created
+- react-project/src/hooks/useCounter.jsx
+- react-project/src/App.jsx
+
+### Outcome
+Successfully created and used my first Custom Hook in React.
