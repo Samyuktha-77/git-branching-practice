@@ -360,3 +360,27 @@ Local Storage helps maintain data in the browser even after a page refresh.
 
 ### Outcome
 Successfully created and used my first Custom Hook in React.
+
+## Day 24 – React API Fetching
+
+**Skill:** API Fetching using fetch(), useEffect() and useState().
+
+### What I Learned
+- Fetching data from an external API.
+- Using useEffect() to fetch data when the component mounts.
+- Storing API responses using useState().
+- Displaying API data using map().
+- Handling loading and error states.
+- Creating responsive layouts using CSS Grid.
+
+### Practical Project
+Built an API User Dashboard using the JSONPlaceholder API.
+
+### Features
+- Displays 10 users.
+- Shows name, email, phone, website and city.
+- Includes loading and error handling.
+
+**API:** https://jsonplaceholder.typicode.com/users
+
+**Status:** Day 24 completed.
