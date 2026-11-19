@@ -1,86 +1,85 @@
 
-import { useEffect, useState } from "react";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link,
+  useParams
+} from "react-router-dom";
 
-function App() {
-  const [users, setUsers] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
+function Home() {
+  return (
+    <div>
+      <h2>Welcome to Student Management System 🏠</h2>
+      <p>This is the Home Page.</p>
+    </div>
+  );
+}
 
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then(response => {
-        if (!response.ok) {
-          throw new Error("Failed to fetch users");
-        }
-        return response.json();
-      })
-      .then(data => {
-        setUsers(data);
-        setLoading(false);
-      })
-      .catch(error => {
-        setError(error.message);
-        setLoading(false);
-      });
-  }, []);
+function Students() {
+  return (
+    <div>
+      <h2>Students Page 👩‍🎓</h2>
+      <p>Welcome to the Students section.</p>
 
-  if (loading) {
-    return <h2>Loading users...</h2>;
-  }
+      <ul>
+        <li>
+          <Link to="/students/101">Student 101</Link>
+        </li>
+        <li>
+          <Link to="/students/102">Student 102</Link>
+        </li>
+        <li>
+          <Link to="/students/103">Student 103</Link>
+        </li>
+      </ul>
+    </div>
+  );
+}
 
-  if (error) {
-    return <h2>{error}</h2>;
-  }
+function StudentDetails() {
+  const { id } = useParams();
 
   return (
-    <div
-      style={{
-        padding: "30px",
-        fontFamily: "Arial",
-        backgroundColor: "#f4f6f9",
-        minHeight: "100vh"
-      }}
-    >
-      <h1 style={{ textAlign: "center", color: "#222" }}>
-        Day 24 - API User Dashboard
-      </h1>
-
-      <p style={{ textAlign: "center", color: "#666" }}>
-        Users fetched from JSONPlaceholder API
-      </p>
-
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-          gap: "20px",
-          marginTop: "30px"
-        }}
-      >
-        {users.map(user => (
-          <div
-            key={user.id}
-            style={{
-              padding: "20px",
-              border: "1px solid #ddd",
-              borderRadius: "12px",
-              backgroundColor: "white",
-              boxShadow: "0 3px 8px rgba(0,0,0,0.08)"
-            }}
-          >
-            <h3 style={{ color: "#2563eb" }}>{user.name}</h3>
-
-            <p><strong>Email:</strong> {user.email}</p>
-
-            <p><strong>Phone:</strong> {user.phone}</p>
-
-            <p><strong>Website:</strong> {user.website}</p>
-
-            <p><strong>City:</strong> {user.address.city}</p>
-          </div>
-        ))}
-      </div>
+    <div>
+      <h2>Student Details 📚</h2>
+      <p>Student ID: {id}</p>
+      <Link to="/students">Back to Students</Link>
     </div>
+  );
+}
+
+function About() {
+  return (
+    <div>
+      <h2>About Our Application ℹ️</h2>
+      <p>This application is built using React Router.</p>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <div style={{ padding: "20px", fontFamily: "Arial" }}>
+        <h1>My Student App 🎓</h1>
+
+        <nav style={{ display: "flex", gap: "20px" }}>
+          <Link to="/">Home</Link>
+          <Link to="/students">Students</Link>
+          <Link to="/about">About</Link>
+        </nav>
+
+        <hr />
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/students" element={<Students />} />
+          <Route path="/students/:id" element={<StudentDetails />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
