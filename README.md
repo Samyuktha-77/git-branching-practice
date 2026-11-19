@@ -384,3 +384,29 @@ Built an API User Dashboard using the JSONPlaceholder API.
 **API:** https://jsonplaceholder.typicode.com/users
 
 **Status:** Day 24 completed.
+
+
+## Day 25 - React Router
+
+### What I learned
+- Introduction to React Router
+- BrowserRouter
+- Routes and Route
+- Link for navigation
+- Dynamic routing
+- useParams() hook
+
+### Practical Implementation
+Created a Student Management Application with:
+- Home Page
+- Students Page
+- About Page
+- Student Details Page
+
+### Dynamic Routing Examples
+- /students/101
+- /students/102
+- /students/103
+
+### Key Learning
+React Router allows navigation between pages without reloading the entire application.
