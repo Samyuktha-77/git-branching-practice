@@ -4,14 +4,22 @@ import {
   Routes,
   Route,
   Link,
-  useParams
+  useParams,
+  useNavigate,
+  NavLink
 } from "react-router-dom";
 
 function Home() {
+  const navigate = useNavigate();
+
   return (
     <div>
       <h2>Welcome to Student Management System 🏠</h2>
       <p>This is the Home Page.</p>
+
+      <button onClick={() => navigate("/students")}>
+        View Students
+      </button>
     </div>
   );
 }
@@ -58,16 +66,45 @@ function About() {
   );
 }
 
+function NotFound() {
+  const navigate = useNavigate();
+
+  return (
+    <div>
+      <h2>404 - Page Not Found ❌</h2>
+      <p>Sorry! The page you are looking for does not exist.</p>
+
+      <button onClick={() => navigate("/")}>
+        Go to Home
+      </button>
+    </div>
+  );
+}
+
 function App() {
+  const navStyle = ({ isActive }) => ({
+    textDecoration: "none",
+    color: isActive ? "blue" : "black",
+    fontWeight: isActive ? "bold" : "normal"
+  });
+
   return (
     <BrowserRouter>
       <div style={{ padding: "20px", fontFamily: "Arial" }}>
         <h1>My Student App 🎓</h1>
 
         <nav style={{ display: "flex", gap: "20px" }}>
-          <Link to="/">Home</Link>
-          <Link to="/students">Students</Link>
-          <Link to="/about">About</Link>
+          <NavLink to="/" style={navStyle}>
+            Home
+          </NavLink>
+
+          <NavLink to="/students" style={navStyle}>
+            Students
+          </NavLink>
+
+          <NavLink to="/about" style={navStyle}>
+            About
+          </NavLink>
         </nav>
 
         <hr />
@@ -77,6 +114,7 @@ function App() {
           <Route path="/students" element={<Students />} />
           <Route path="/students/:id" element={<StudentDetails />} />
           <Route path="/about" element={<About />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </BrowserRouter>

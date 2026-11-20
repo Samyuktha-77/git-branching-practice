@@ -410,3 +410,21 @@ Created a Student Management Application with:
 
 ### Key Learning
 React Router allows navigation between pages without reloading the entire application.
+
+## Day 26 – React Router Navigation
+
+### Concepts Learned
+- `useNavigate()` for programmatic navigation.
+- `NavLink` for highlighting active navigation links.
+- 404 Not Found page using wildcard routing (`path="*"`).
+
+### Hands-on Implementation
+Improved my Student Management Application by adding:
+- View Students button on the Home page.
+- Programmatic navigation using `useNavigate()`.
+- Active navigation styling using `NavLink`.
+- Custom 404 Not Found page.
+- Go to Home button on the 404 page.
+
+### Key Learning
+React Router provides different ways to navigate between pages and handle invalid routes in a React application.
