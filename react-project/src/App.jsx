@@ -9,6 +9,13 @@ import {
   NavLink
 } from "react-router-dom";
 
+import { useContext } from "react";
+import {
+  StudentProvider,
+  StudentContext
+} from "./StudentContext";
+
+// Home Page
 function Home() {
   const navigate = useNavigate();
 
@@ -24,48 +31,67 @@ function Home() {
   );
 }
 
+// Students Page
 function Students() {
+  const { students } = useContext(StudentContext);
+
   return (
     <div>
       <h2>Students Page 👩‍🎓</h2>
       <p>Welcome to the Students section.</p>
 
-      <ul>
-        <li>
-          <Link to="/students/101">Student 101</Link>
-        </li>
-        <li>
-          <Link to="/students/102">Student 102</Link>
-        </li>
-        <li>
-          <Link to="/students/103">Student 103</Link>
-        </li>
-      </ul>
+      <h3>Student List</h3>
+
+      {students.map((student) => (
+        <div key={student.id}>
+          <Link to={`/students/${student.id}`}>
+            {student.name} - {student.course}
+          </Link>
+        </div>
+      ))}
     </div>
   );
 }
 
+// Student Details Page
 function StudentDetails() {
   const { id } = useParams();
+  const { students } = useContext(StudentContext);
+
+  const student = students.find(
+    (item) => item.id === Number(id)
+  );
 
   return (
     <div>
       <h2>Student Details 📚</h2>
-      <p>Student ID: {id}</p>
+
+      {student ? (
+        <>
+          <p>ID: {student.id}</p>
+          <p>Name: {student.name}</p>
+          <p>Course: {student.course}</p>
+        </>
+      ) : (
+        <p>Student not found.</p>
+      )}
+
       <Link to="/students">Back to Students</Link>
     </div>
   );
 }
 
+// About Page
 function About() {
   return (
     <div>
       <h2>About Our Application ℹ️</h2>
-      <p>This application is built using React Router.</p>
+      <p>This application uses React Router and Context API.</p>
     </div>
   );
 }
 
+// 404 Page
 function NotFound() {
   const navigate = useNavigate();
 
@@ -81,6 +107,7 @@ function NotFound() {
   );
 }
 
+// Main App
 function App() {
   const navStyle = ({ isActive }) => ({
     textDecoration: "none",
@@ -89,35 +116,37 @@ function App() {
   });
 
   return (
-    <BrowserRouter>
-      <div style={{ padding: "20px", fontFamily: "Arial" }}>
-        <h1>My Student App 🎓</h1>
+    <StudentProvider>
+      <BrowserRouter>
+        <div style={{ padding: "20px", fontFamily: "Arial" }}>
+          <h1>My Student App 🎓</h1>
 
-        <nav style={{ display: "flex", gap: "20px" }}>
-          <NavLink to="/" style={navStyle}>
-            Home
-          </NavLink>
+          <nav style={{ display: "flex", gap: "20px" }}>
+            <NavLink to="/" style={navStyle}>
+              Home
+            </NavLink>
 
-          <NavLink to="/students" style={navStyle}>
-            Students
-          </NavLink>
+            <NavLink to="/students" style={navStyle}>
+              Students
+            </NavLink>
 
-          <NavLink to="/about" style={navStyle}>
-            About
-          </NavLink>
-        </nav>
+            <NavLink to="/about" style={navStyle}>
+              About
+            </NavLink>
+          </nav>
 
-        <hr />
+          <hr />
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/students" element={<Students />} />
-          <Route path="/students/:id" element={<StudentDetails />} />
-          <Route path="/about" element={<About />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/students" element={<Students />} />
+            <Route path="/students/:id" element={<StudentDetails />} />
+            <Route path="/about" element={<About />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </StudentProvider>
   );
 }
 
