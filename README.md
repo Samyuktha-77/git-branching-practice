@@ -428,3 +428,46 @@ Improved my Student Management Application by adding:
 
 ### Key Learning
 React Router provides different ways to navigate between pages and handle invalid routes in a React application.
+
+## Day 27 – React Context API
+
+**Topic:** State Management using React Context API
+
+### What I learned
+- Understanding the Context API.
+- Using `createContext()` to create a context.
+- Using `useContext()` to access shared data.
+- Creating a StudentProvider component.
+- Sharing student data across multiple components.
+- Understanding and avoiding prop drilling.
+
+### Hands-on implementation
+- Created StudentContext.
+- Created StudentProvider to provide student data.
+- Managed student information using useState().
+- Accessed shared student data in different components.
+
+**Learning outcome:** Learned how to share data between React components without passing props through every level.
+
+---
+
+## Day 28 – React useReducer Hook
+
+**Topic:** State Management using useReducer and Context API
+
+### What I learned
+- Understanding the useReducer Hook.
+- Creating a reducer function.
+- Managing state using dispatch().
+- Handling actions using switch statements.
+- Combining useReducer with Context API.
+- Understanding ADD_STUDENT and DELETE_STUDENT actions.
+
+### Hands-on implementation
+- Replaced useState() with useReducer() for student data management.
+- Added new students.
+- Deleted existing students.
+- Shared student data across components using Context API.
+- Integrated React Router with Context API.
+
+**Learning outcome:** Learned how to manage shared application state using useReducer and Context API.
