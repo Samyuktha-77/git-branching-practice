@@ -361,6 +361,7 @@ Local Storage helps maintain data in the browser even after a page refresh.
 ### Outcome
 Successfully created and used my first Custom Hook in React.
 
+
 ## Day 24 – React API Fetching
 
 **Skill:** API Fetching using fetch(), useEffect() and useState().
@@ -471,3 +472,26 @@ React Router provides different ways to navigate between pages and handle invali
 - Integrated React Router with Context API.
 
 **Learning outcome:** Learned how to manage shared application state using useReducer and Context API.
+
+## Day 29 – React Custom Hooks
+
+**Topic:** Creating Reusable Custom Hooks in React
+
+### What I learned
+- Understanding Custom Hooks in React.
+- Creating a reusable custom hook called `useStudents`.
+- Using `useContext()` inside a custom hook.
+- Accessing shared student data through Context API.
+- Separating reusable logic from UI components.
+- Improving code reusability and maintainability.
+
+### Hands-on implementation
+- Created `useStudents.jsx` inside the hooks folder.
+- Implemented `addStudent()` to add new students.
+- Implemented `deleteStudent()` to remove students.
+- Integrated the custom hook with the Student Management Application.
+- Tested adding and deleting students.
+
+**Learning outcome:** Learned how to create reusable custom hooks and manage shared application logic using React Context API.
+
+---
