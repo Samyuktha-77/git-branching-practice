@@ -1,29 +1,23 @@
 
-import React, { useContext, useState } from "react";
-
 import {
   BrowserRouter,
   Routes,
   Route,
-  Link,
-  useParams,
-  useNavigate,
-  NavLink
+  NavLink,
+  useNavigate
 } from "react-router-dom";
 
-import {
-  StudentProvider,
-  StudentContext
-} from "./StudentContext";
+import { StudentProvider, StudentContext } from "./StudentContext";
+import { useContext, useState } from "react";
+import useStudents from "./hooks/useStudents";
 
-// Home Page
 function Home() {
   const navigate = useNavigate();
 
   return (
     <div>
-      <h2>Welcome to Student Management System 🏠</h2>
-      <p>This is the Home Page.</p>
+      <h1>Student Management System</h1>
+      <p>Welcome to the Student Management Application!</p>
 
       <button onClick={() => navigate("/students")}>
         View Students
@@ -32,183 +26,126 @@ function Home() {
   );
 }
 
-// Students Page
 function Students() {
-  const { students, dispatch } = useContext(StudentContext);
+  const { students, addStudent, deleteStudent } = useStudents();
 
   const [name, setName] = useState("");
   const [course, setCourse] = useState("");
 
-  const addStudent = () => {
+  const handleAddStudent = () => {
     if (name.trim() === "" || course.trim() === "") {
       alert("Please enter student name and course");
       return;
     }
 
-    dispatch({
-      type: "ADD_STUDENT",
-      payload: {
-        id: Date.now(),
-        name: name.trim(),
-        course: course.trim()
-      }
-    });
+    const newStudent = {
+      id: Date.now(),
+      name: name.trim(),
+      course: course.trim()
+    };
+
+    addStudent(newStudent);
 
     setName("");
     setCourse("");
   };
 
-  const deleteStudent = (id) => {
-    dispatch({
-      type: "DELETE_STUDENT",
-      payload: id
-    });
-  };
-
   return (
     <div>
-      <h2>Students Page 👩‍🎓</h2>
-      <p>Welcome to the Students section.</p>
+      <h2>Student List</h2>
 
       <h3>Add New Student</h3>
 
       <input
         type="text"
-        placeholder="Student Name"
+        placeholder="Enter student name"
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
 
+      <br />
+      <br />
+
       <input
         type="text"
-        placeholder="Course"
+        placeholder="Enter course"
         value={course}
         onChange={(e) => setCourse(e.target.value)}
       />
 
-      <button onClick={addStudent}>
+      <br />
+      <br />
+
+      <button onClick={handleAddStudent}>
         Add Student
       </button>
 
-      <h3>Student List</h3>
+      <hr />
 
-      {students.length === 0 ? (
-        <p>No students available.</p>
-      ) : (
-        students.map((student) => (
-          <div key={student.id}>
-            <Link to={`/students/${student.id}`}>
-              {student.name} - {student.course}
-            </Link>
-
-            <button onClick={() => deleteStudent(student.id)}>
-              Delete
-            </button>
-          </div>
-        ))
-      )}
-    </div>
-  );
-}
-
-// Student Details Page
-function StudentDetails() {
-  const { id } = useParams();
-  const { students } = useContext(StudentContext);
-
-  const student = students.find(
-    (item) => item.id === Number(id)
-  );
-
-  return (
-    <div>
-      <h2>Student Details 📚</h2>
-
-      {student ? (
-        <>
-          <p>ID: {student.id}</p>
-          <p>Name: {student.name}</p>
+      {students.map((student) => (
+        <div key={student.id}>
+          <h3>{student.name}</h3>
           <p>Course: {student.course}</p>
-        </>
-      ) : (
-        <p>Student not found.</p>
-      )}
 
-      <Link to="/students">Back to Students</Link>
+          <button onClick={() => deleteStudent(student.id)}>
+            Delete
+          </button>
+
+          <hr />
+        </div>
+      ))}
     </div>
   );
 }
 
-// About Page
-function About() {
-  return (
-    <div>
-      <h2>About Our Application ℹ️</h2>
-      <p>
-        This application uses React Router,
-        Context API and useReducer Hook.
-      </p>
-    </div>
-  );
-}
-
-// 404 Page
-function NotFound() {
+function StudentDetails() {
+  const { students } = useContext(StudentContext);
   const navigate = useNavigate();
 
   return (
     <div>
-      <h2>404 - Page Not Found ❌</h2>
-      <p>Sorry! The page you are looking for does not exist.</p>
+      <h2>Student Details</h2>
 
-      <button onClick={() => navigate("/")}>
-        Go to Home
+      {students.map((student) => (
+        <div key={student.id}>
+          <p>
+            {student.name} - {student.course}
+          </p>
+        </div>
+      ))}
+
+      <button onClick={() => navigate("/students")}>
+        Back to Students
       </button>
     </div>
   );
 }
 
-// Main App
-function App() {
-  const navStyle = ({ isActive }) => ({
-    textDecoration: "none",
-    color: isActive ? "blue" : "black",
-    fontWeight: isActive ? "bold" : "normal"
-  });
+function NotFound() {
+  return (
+    <div>
+      <h1>404 - Page Not Found</h1>
+      <NavLink to="/">Go Home</NavLink>
+    </div>
+  );
+}
 
+function App() {
   return (
     <StudentProvider>
       <BrowserRouter>
-        <div style={{ padding: "20px", fontFamily: "Arial" }}>
-          <h1>My Student App 🎓</h1>
+        <nav>
+          <NavLink to="/">Home</NavLink>{" | "}
+          <NavLink to="/students">Students</NavLink>{" | "}
+          <NavLink to="/student-details">Student Details</NavLink>
+        </nav>
 
-          <nav style={{ display: "flex", gap: "20px" }}>
-            <NavLink to="/" style={navStyle}>
-              Home
-            </NavLink>
-
-            <NavLink to="/students" style={navStyle}>
-              Students
-            </NavLink>
-
-            <NavLink to="/about" style={navStyle}>
-              About
-            </NavLink>
-          </nav>
-
-          <hr />
-
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/students" element={<Students />} />
-            <Route
-              path="/students/:id"
-              element={<StudentDetails />}
-            />
-            <Route path="/about" element={<About />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/students" element={<Students />} />
+          <Route path="/student-details" element={<StudentDetails />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </BrowserRouter>
     </StudentProvider>
   );
