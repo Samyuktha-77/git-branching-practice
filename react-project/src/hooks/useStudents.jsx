@@ -1,24 +1,35 @@
-
 import { useContext } from "react";
 import { StudentContext } from "../StudentContext";
 
 function useStudents() {
-  const { students, setStudents } = useContext(StudentContext);
+  const { students, dispatch } = useContext(StudentContext);
 
   const addStudent = (student) => {
-    setStudents((prevStudents) => [...prevStudents, student]);
+    dispatch({
+      type: "ADD_STUDENT",
+      payload: student
+    });
   };
 
   const deleteStudent = (id) => {
-    setStudents((prevStudents) =>
-      prevStudents.filter((student) => student.id !== id)
-    );
+    dispatch({
+      type: "DELETE_STUDENT",
+      payload: id
+    });
+  };
+
+  const updateStudent = (student) => {
+    dispatch({
+      type: "UPDATE_STUDENT",
+      payload: student
+    });
   };
 
   return {
     students,
     addStudent,
-    deleteStudent
+    deleteStudent,
+    updateStudent
   };
 }
 
